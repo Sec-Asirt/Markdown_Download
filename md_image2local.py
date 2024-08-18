@@ -6,6 +6,7 @@ import sys
 import re
 import argparse
 import time
+from urllib.parse import urlparse
 
 # 创建一个空字典来保存URL和文件名
 url_to_filename = {}
@@ -79,6 +80,7 @@ def download_pics(url, file) -> int:
     if os.path.exists(file_path):
         return 2
 
+    
     # https请求
     img_data = requests.get(url).content
 
